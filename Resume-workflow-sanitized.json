@@ -1,0 +1,1463 @@
+{
+  "name": "Resume-workflow-latest copy",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID_HERE",
+          "mode": "list",
+          "cachedResultName": "Jobs-n8n",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Job descriptions",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -5072,
+        912
+      ],
+      "id": "190836d8-f548-459e-bb80-ad124e3a34de",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "pMinTatZQh81ItTw",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID_HERE",
+          "mode": "list",
+          "cachedResultName": "Jobs-n8n",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 842877641,
+          "mode": "list",
+          "cachedResultName": "Job-content",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Content": "={{ $json.output }}"
+          },
+          "matchingColumns": [
+            "Summarized Content"
+          ],
+          "schema": [
+            {
+              "id": "Content",
+              "displayName": "Content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -816,
+        688
+      ],
+      "id": "4f45b79e-71be-49a6-a465-fdd6f6e78ef0",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ESOylrDYfTX61EuB",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cd7e0632-e03d-46b2-8943-bc1cd9658566",
+              "name": "Summary section",
+              "value": "Data Engineer with 4+ years of experience building high-performance ETL/ELT pipelines across Azure, AWS, and GCP, processing 5M+ records daily with 99.9\\% uptime. Skilled in Azure Data Factory, Databricks, Synapse, Spark, dbt, and Airflow with a proven record of reducing ETL runtimes by 40\\% and modernizing legacy SQL Server/Redshift workloads into scalable cloud-native platforms. Strong expertise in Medallion, Star, and Snowflake modeling, data quality frameworks, CI/CD automation, and HIPAA-compliant data engineering for healthcare, finance, and compliance analytics. Experienced in building real-time ingestion, Spark optimizations, pipeline reliability engineering, and ML-ready datasets that accelerated fraud detection workflows and enabled $3.2M in anomaly recovery for claims pipelines.",
+              "type": "string"
+            },
+            {
+              "id": "08768873-96b3-4457-b6a6-36ec305602e8",
+              "name": "=Experience section",
+              "value": "={\n  \"Experience\": [\n    {\n      \"Job_Title\": \"Data Engineer (Contract)\",\n      \"Company\": \"Humana\",\n      \"Location\": \"Louisville, KY (Remote)\",\n      \"Dates\": \"May 2024 \u2013 Present\",\n      \"Bullets\": [\n        \"Designed and deployed scalable ETL/ELT pipelines using Azure Data Factory and Databricks, integrating claims, member, and provider datasets from APIs, SQL Server, and S3 to ingest 3M+ daily records and improve SLA adherence by 25%.\",\n        \"Built dbt-based Synapse transformations to standardize eligibility and claims data, reducing manual SQL by 60% and cutting overall ELT prep time by half for audit, finance, and compliance reporting.\",\n        \"Modeled enterprise datasets using Medallion Architecture and Snowflake Schema, boosting Power BI and SSRS query performance by 45% and accelerating CMS audit cycles.\",\n        \"Optimized PySpark and complex SQL transformations with partitioning, caching, and join tuning, reducing Medicare/Medicaid pipeline runtimes by 40% and lowering compute cost.\",\n        \"Implemented HIPAA-compliant encryption, masking, and row-level security policies in Synapse and Data Lake, ensuring zero CMS audit violations and secure handling of sensitive healthcare datasets.\",\n        \"Automated monitoring and error resolution using Python integrated with Azure Monitor and Log Analytics, achieving 99.9% pipeline uptime and enabling real-time SLA-bound incident recovery.\",\n        \"Developed Power BI and SSRS dashboards for denial analysis, SLA tracking, and reimbursement trends, reducing manual reporting preparation time by 50%.\",\n        \"Migrated 20+ SQL Server and Redshift ETL workloads into Databricks/Synapse using Delta Lake, modernizing legacy systems, improving scalability, and cutting infrastructure costs by 30%.\",\n        \"Delivered validated datasets supporting ML-based fraud detection, contributing to recovery of $3.2M in overpayment anomalies.\"\n      ]\n    },\n    {\n      \"Job_Title\": \"Data Engineer\",\n      \"Company\": \"LTIMindtree\",\n      \"Location\": \"Hyderabad, India\",\n      \"Dates\": \"Nov 2022 \u2013 Jul 2023\",\n      \"Bullets\": [\n        \"Built end-to-end ADF, Synapse, and Data Lake Gen2 pipelines processing 20M+ records from APIs, RDBMS sources, and flat files, enabling centralized analytics and fast access to curated datasets.\",\n        \"Developed PySpark and SQL transformations for cleansing, deduplication, and business-rule standardization, reducing duplicate records by 35% and increasing reporting accuracy.\",\n        \"Designed automated Python and Spark validation frameworks with built-in DQ checks, reducing QA cycles by 35% and improving error detection speed.\",\n        \"Optimized big-data workloads using partitioning, caching, and cluster scaling, reducing runtime by 40% and cutting infrastructure costs by 20% while maintaining SLAs.\",\n        \"Created Power BI dashboards for claims, billing, and operational KPIs, enabling 200+ users to perform self-service analytics and accelerating decision-making cycles by 50%.\",\n        \"Implemented optimized logical and physical data models in Synapse, improving BI query performance by 30% and ensuring reusable and scalable data structures.\",\n        \"Migrated SQL Server workloads to Synapse and Azure SQL, increasing elasticity and reducing infrastructure costs by 25%.\",\n        \"Authored SOPs, lineage diagrams, and workflow documentation to support internal audits, accelerating clearance and reducing explanation overhead.\",\n        \"Maintained 24\u00d77 production pipeline health through proactive Synapse and ADF monitoring, achieving more than 99.8% SLA adherence.\"\n      ]\n    },\n    {\n      \"Job_Title\": \"Associate Data Engineer\",\n      \"Company\": \"TCS\",\n      \"Location\": \"Hyderabad, India\",\n      \"Dates\": \"Jan 2021 \u2013 Oct 2022\",\n      \"Bullets\": [\n        \"Built and maintained 25+ ETL pipelines using Python, SQL, Talend, and AWS Glue, integrating 50M+ records from 15+ data sources with strong SLA-driven reliability.\",\n        \"Automated ingestion pipelines with AWS Lambda and Glue triggers, reducing manual operations by 30% and cutting average pipeline execution time by 45%.\",\n        \"Developed batch and streaming pipelines using S3, Redshift, and Kinesis, reducing reporting latency by 60% and enabling near real-time data availability.\",\n        \"Improved Redshift performance by 25\u201340% through optimized schema design, indexing, and partitioning strategies, significantly accelerating reporting workloads.\",\n        \"Built validation workflows with more than 100 automated quality checks, consistently delivering 99.8% validated datasets for production systems.\",\n        \"Monitored and troubleshot 50+ ETL jobs via CloudWatch alarms and logs, ensuring 99.9% uptime and timely SLA-driven issue resolution.\",\n        \"Translated business requirements into scalable ETL architectures, improving data availability, resilience, and analytics readiness for financial and operational teams.\",\n        \"Authored detailed documentation, onboarding guides, and DR playbooks, reducing onboarding time for new engineers by 40% and improving team knowledge transfer.\",\n        \"Collaborated with QA, analytics, and development teams within Agile/Scrum ceremonies to ensure timely releases and improve cross-team integration.\"\n      ]\n    }\n  ]\n}\n",
+              "type": "object"
+            },
+            {
+              "id": "9c1b7e30-a3a9-4436-b7f6-832f252c5d64",
+              "name": "Skills Section",
+              "value": "={\n  \"Skills_Section\": {\n    \"Programming_&_Scripting\": [\n      \"Python\",\n      \"SQL\",\n      \"T-SQL\",\n      \"PySpark\",\n      \"Scala\",\n      \"Shell Scripting (Bash, PowerShell)\",\n      \"JSON\",\n      \"YAML\"\n    ],\n    \"Cloud_Platforms\": {\n      \"Microsoft_Azure\": [\n        \"ADF\",\n        \"Synapse\",\n        \"Databricks\",\n        \"Data Lake\",\n        \"Key Vault\",\n        \"Monitor\",\n        \"Blob Storage\",\n        \"Azure SQL\",\n        \"Azure Fabric\"\n      ],\n      \"AWS\": [\n        \"S3\",\n        \"Glue\",\n        \"Redshift\",\n        \"Lambda\",\n        \"Kinesis\",\n        \"Step Functions\",\n        \"SageMaker\",\n        \"EC2\",\n        \"CloudFormation\",\n        \"CloudWatch\",\n        \"VPC\",\n        \"ECS\",\n        \"EKS\"\n      ],\n      \"Google_Cloud_Platform\": [\n        \"BigQuery\",\n        \"Dataflow\",\n        \"Pub/Sub\",\n        \"Looker Studio\"\n      ]\n    },\n    \"ETL_ELT_&_Orchestration\": [\n      \"Azure Data Factory\",\n      \"Databricks\",\n      \"AWS Glue\",\n      \"Apache Airflow\",\n      \"Prefect\",\n      \"Dagster\",\n      \"SSIS\",\n      \"Informatica\",\n      \"Talend\",\n      \"ODI\",\n      \"Alteryx\",\n      \"dbt\",\n      \"IBM DataStage\",\n      \"SAP BODS\",\n      \"SQL Server Agent\"\n    ],\n    \"Data_Modeling_&_Warehousing\": [\n      \"Medallion Architecture\",\n      \"Star Schema\",\n      \"Snowflake Schema\",\n      \"Data Vault\",\n      \"OLTP/OLAP\",\n      \"Delta Lake\",\n      \"Parquet\",\n      \"Snowflake\",\n      \"Redshift\",\n      \"Synapse\",\n      \"SQL Server\",\n      \"Teradata\",\n      \"Athena\"\n    ],\n    \"Data_Integration_&_Sources\": [\n      \"ERP Systems\",\n      \"Oracle\",\n      \"SQL Server\",\n      \"PostgreSQL\",\n      \"MySQL\",\n      \"MongoDB\",\n      \"Cosmos DB\",\n      \"REST APIs\",\n      \"GraphQL\",\n      \"SFTP\",\n      \"Flat Files\",\n      \"SaaS Platforms\",\n      \"SharePoint\",\n      \"CMS Claims Feeds\",\n      \"Event-Driven/Batched Ingestion\"\n    ],\n    \"Infrastructure_as_Code_&_DevOps\": [\n      \"Terraform\",\n      \"AWS CloudFormation\",\n      \"Docker\",\n      \"Kubernetes (AKS)\",\n      \"Jenkins\",\n      \"GitHub Actions\",\n      \"GitLab\",\n      \"Bamboo\",\n      \"Bitbucket\",\n      \"Liquibase\",\n      \"GitOps Practices\",\n      \"CI/CD Automation\"\n    ],\n    \"Security_&_Governance\": [\n      \"IAM\",\n      \"Encryption (KMS, TDE)\",\n      \"Row-Level Security\",\n      \"Schema Enforcement\",\n      \"Great Expectations\",\n      \"dbt Tests\",\n      \"HIPAA\",\n      \"GDPR\",\n      \"CMS Audit Readiness\"\n    ],\n    \"Monitoring_&_Observability\": [\n      \"Azure Monitor\",\n      \"AWS CloudWatch\",\n      \"SLA Tracking\",\n      \"Health Monitoring\",\n      \"Data Freshness Checks\",\n      \"Incident Logging\",\n      \"Failure Alerting\",\n      \"Automated Issue Resolution\"\n    ],\n    \"Visualization_&_Reporting\": [\n      \"Power BI\",\n      \"Tableau\",\n      \"SSRS\",\n      \"Looker\",\n      \"AWS QuickSight\",\n      \"Statistical Analysis\",\n      \"Executive Dashboards\",\n      \"KPI Monitoring\",\n      \"Compliance Reporting\"\n    ],\n    \"Optimization_&_Troubleshooting\": [\n      \"Data Pipeline Performance Tuning\",\n      \"Cost Optimization\",\n      \"Root Cause Analysis\",\n      \"Reliability Engineering\"\n    ],\n    \"Machine_Learning_&_Libraries\": [\n      \"Pandas\",\n      \"NumPy\",\n      \"Scikit-learn\",\n      \"TensorFlow\",\n      \"MLlib\",\n      \"NLP\",\n      \"Forecasting\",\n      \"Time Series\",\n      \"Feature Engineering\",\n      \"Model Deployment\",\n      \"Hyperparameter Tuning\"\n    ],\n    \"Collaboration_&_Agile_Delivery\": [\n      \"Agile\",\n      \"Scrum\",\n      \"JIRA\",\n      \"Confluence\",\n      \"SDLC (Agile & Waterfall)\",\n      \"Sprint Demos\",\n      \"Documentation\",\n      \"Cross-Functional Delivery\",\n      \"On-Call Support\"\n    ],\n    \"Other_Competencies\": [\n      \"RESTful APIs\",\n      \"Microservices\",\n      \"SOA\",\n      \"GraphQL\",\n      \"SuiteAnalytics Connect\",\n      \"Microsoft Office Suite (Word, Excel, Teams, PowerPoint, Outlook, Visio, TFS)\"\n    ]\n  }\n}\n",
+              "type": "object"
+            },
+            {
+              "id": "730550be-84a1-4807-941a-5d6aeade1687",
+              "name": "Projects Section",
+              "value": "Real-Time Weather Analysis Platform (Kafka, Spark, Airflow, Snowflake, Power BI)\n* Built and deployed a real-time weather data pipeline using Kafka and Spark Structured Streaming to process 100,000+ records daily across 10 U.S. cities, orchestrated via Airflow for reliability.\n* Designed Snowflake data models and Power BI dashboards that delivered hourly insights, trend summaries, and real-time analytics for 200+ users.\n\nCloud Data Engineering Pipeline using Microsoft Azure (SQL, Azure, Power BI)\n* Migrated 50K+ records from on-prem SQL to Azure cloud using SSMS and built automated ETL pipelines with ADF and Synapse improving refresh efficiency by 60%.\n* Integrated curated Data Lake Gen2 layers with Power BI for real-time business insights supported by ADF triggers and monitoring.\n\nConsumer Complaints Classification (Machine Learning, NLP, BERT)\n* Built a classification model for financial consumer complaints using XGBoost, Random Forest, and BERT; achieved 88% accuracy with XGBoost.\n* Compared classical ML and BERT workflows, demonstrating precision\u2013performance trade-offs and challenges in generalization on complex text.\n\nKnowflow AI \u2014 Knowledge workflow & automation platform\n* Developed a Python-based knowledge workflow platform to ingest, normalize, and index enterprise content for retrieval.\n* Implemented embedding-based semantic search and RAG pipelines to power a context-aware assistant.\n* Built connectors and workflow orchestration to automate actions (tickets, notifications), cutting manual task time by ~50%.\n* Added entity extraction, metadata enrichment, and relevance tuning to improve answer accuracy and confidence.\n* Scaled async indexing and monitoring to support high-throughput queries and observability of retrieval quality.\n\nN8N Resume Tailor workflow \u2014 Automation project\n* Built an n8n workflow to automate resume and cover-letter personalization by extracting job posting details, mapping requirements to candidate skills, and generating tailored content.\n* Engineered template-driven outputs and integrations with cloud storage and email endpoints to produce versioned, shareable resumes and application materials.\n\nTech News Intelligence Hub (Kafka-PySpark-Snowflake-Streamlit)\n* Built a real-time Kafka\u2013PySpark\u2013Snowflake pipeline to process tech news with <5s latency.\n* Used PySpark watermarking and checkpointing to ensure exactly-once delivery and reduce duplicates by 95%.\n* Developed a Streamlit dashboard visualizing top companies, trending topics, and hourly news volume with <5s end-to-end latency.\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2224,
+        1168
+      ],
+      "id": "ec3df05f-87a3-4a04-ab73-e4a6a56d5b3b",
+      "name": "Edit Fields",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d81ee892-1d0c-4d7b-8ca6-23a59b095101",
+              "name": "Education Section",
+              "value": "\\vspace{0.1cm}\n\\section*{EDUCATION}\n\\hrule\n\\vspace{0.1cm}\n\\noindent\\textbf{Master of Science, Computer Science \\hfill May 2025} \\\\\nUniversity of Maryland Baltimore County,Baltimore, MD \\hfill GPA: 3.85\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1104,
+        1184
+      ],
+      "id": "2154e466-9481-456f-a60f-1ef77b1967cc",
+      "name": "Edit Fields1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -432,
+        1136
+      ],
+      "id": "68cbd6aa-7979-4342-82c4-bf723b29deab",
+      "name": "Merge",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "content": "## Experience section modification\n",
+        "height": 576,
+        "width": 816
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        1488
+      ],
+      "id": "cbb44124-e10c-45a7-921c-df2424182bfe",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        1136
+      ],
+      "id": "bbcb27c4-aa17-4649-9e00-a376747bb8c5",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## \ud83e\udde0 Role\nYou are an AI resume assistant that tailors a candidate\u2019s skills to a specific job description.\n\n---\n\n## \ud83c\udfaf Task\nUsing the predefined **Master Skill Bank** available in context, and the **Job Description** below,  \ncreate a concise, targeted skills section for the resume.\n\n---\n\n## \u270d\ufe0f Instructions\n- Select ~50 % of skills from the Master Skill Bank that fit the JD.  \n- Add remaining skills or tools mentioned in the JD (no soft skills).  \n- Group skills into **10 to 13 subheadings** (\u2264 4 words each, \u2264 10 skills per subheading).  \n- Write skills inline, comma-separated, in professional resume style.  \n- Output only the final formatted section \u2014 no reasoning, no explanation.\n\n---\n\n## \ud83d\udcc4 Inputs\n### Job Description\n{{  JSON.stringify($json.Content, null, 2) }}\n### Master Skill Bank\n{{ JSON.stringify($('Edit Fields').item.json['Skills Section'].Skills_Section, null,2) }}\n\n\n---\n\n## \u2705 Output Format\n\u2022 Subheading 1: skill 1(Related skill 1,related skill 2,..), skill 2, skill 3, skill 4, skill 5, skill 6, \u2026  \n\u2022 Subheading 2: skill 1, skill 2, skill3, skill 4, skill 5, skill 6,\u2026  \n\u2022 \u2026  \n\n\n---\n\n## \ud83e\udde9 Example\nProgramming & Scripting: Python, SQL, T-SQL, PySpark, Scala, Shell Scripting (Bash, PowerShell), JSON, YAML\nCloud Platforms: Microsoft Azure (ADF, Synapse, Databricks, Data Lake, Key Vault, Monitor, Blob Storage, Azure SQL, Azure\nFabric), AWS (S3, Glue, Redshift, Lambda, Kinesis, Step Functions, SageMaker, EC2, CloudFormation, CloudWatch, VPC, ECS, EKS), Google Cloud Platform (BigQuery, Dataflow, Pub/Sub, Looker Studio)\nETL, ELT & Orchestration: Azure Data Factory, Databricks, AWS Glue, Apache Airflow, Prefect, Dagster, SSIS, Informatica,\nTalend, ODI, Alteryx, dbt, IBM DataStage, SAP BODS, SQL Server Agent\nData Modeling & Warehousing: Medallion Architecture, Star Schema, Snowflake Schema, Data Vault, OLTP/OLAP, Delta Lake,\nParquet, Snowflake, Redshift, Synapse, SQL Server, Teradata, Athena\nData Integration & Sources: ERP Systems, Oracle, SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, REST APIs, GraphQL, SFTP, Flat Files, SaaS Platforms, SharePoint, CMS Claims Feeds, Event-Driven/Batched Ingestion\nInfrastructure as Code & DevOps: Terraform, AWS CloudFormation, Docker, Kubernetes (AKS), Jenkins, GitHub Actions, GitLab, Bamboo, Bitbucket, Liquibase, GitOps Practices, CI/CD Automation\nSecurity & Governance: IAM, Encryption (KMS, TDE), Row-Level Security, Schema Enforcement, Great Expectations, dbt Tests, HIPAA, GDPR, CMS Audit Readiness\nMonitoring & Observability: Azure Monitor, AWS CloudWatch, SLA Tracking, Health Monitoring, Data Freshness Checks,\nIncident Logging, Failure Alerting, Automated Issue Resolution\nVisualization & Reporting: Power BI, Tableau, SSRS, Looker, AWS QuickSight, Statistical Analysis, Executive Dashboards, KPI Monitoring, Compliance Reporting\nOptimization & Troubleshooting: Data Pipeline Performance Tuning, Cost Optimization, Root Cause Analysis, Reliability Engineering\nMachine Learning & Libraries: Pandas, NumPy, Scikit-learn, TensorFlow, MLlib, NLP, Forecasting, Time Series, Feature Engineering, Model Deployment, Hyperparameter Tuning\nCollaboration & Agile Delivery: Agile, Scrum, JIRA, Confluence, SDLC (Agile & Waterfall), Sprint Demos, Documentation, Cross-Functional Delivery, On-Call Support\nOther Competencies: RESTful APIs, Microservices, SOA, GraphQL, SuiteAnalytics Connect, Microsoft Office Suite (Word,\nExcel, Teams, PowerPoint, Outlook, Visio, TFS)\n---\n\n\u2699\ufe0f *Stop after listing the 13 subheadings. Do not include any extra text.*\n",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        496,
+        768
+      ],
+      "id": "cd73fd69-2850-4237-afe9-9ed2eb1254ed",
+      "name": "Basic LLM Chain2",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Skills section modification\n",
+        "height": 608,
+        "width": 592
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        464,
+        640
+      ],
+      "id": "adff08e6-fe37-4afd-b78c-f7c5bb57c3ed",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Projects modification\n",
+        "height": 592,
+        "width": 880
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "96f7be14-a98a-4915-b821-d16f5c2e0122",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## \ud83e\udde0 Role  \nYou are a resume optimization assistant that selects, refines or create projects to best match the target job role.\n\n---\n\n## \ud83c\udfaf Task  \nSelect and rewrite the **3 most relevant projects** for the given role. \nIf the candidate\u2019s projects do not match the JD domain or tools, create new JD-aligned projects that fit their real skill set.\nUse the rewrite rules below to keep the tone professional, concise, and results-driven.\n\n---\n\n## \u270d\ufe0f Rewrite Rules  \n- **3 total projects.**\n- Exactly **two bullet points per project** (150\u2013200 characters each) and Each project: **a JD-aligned title**.  \n- Start each bullet with a strong **action verb** and focus on **impact first**.  \n- Mention key **tools/technologies** naturally without overstuffing.  \n- Use **clear, HR-friendly phrasing** and include **metrics or qualitative impact**.  \n- Highlight projects that demonstrate the **core skills and responsibilities** of the role.  \n- Do **not** include reasoning, explanations, or extra formatting \u2014 only final project outputs.\n\n---\n\n## \ud83d\udcc4 Inputs  \n### Target Role Description  \n{{ JSON.stringify($json.Content, null, 2)}}\n### Project List  \n{{ $json[\"Projects Section\"] }}\n\n---\n\n## \ud83d\udce4 Output Format (Strict)\n[Project Title] ([Skill 1], [Skill 2], [Skill 3], [Skill 4], [Skill 5])\n- Bullet 1 (170\u2013220 characters)\n- Bullet 2 (170\u2013220 characters)\n\n---\n\n**Example (Style Only)**\n\nReal-Time Weather Analysis Platform (Spark, Kafka, ETL, Power BI, Snowflake)\n- Engineered a high-volume ETL pipeline using Spark and Kafka to process 100k+ daily weather records, enabling real-time multi-city pattern tracking and faster operational insights.\n- Built interactive Power BI dashboards powered by Snowflake to deliver hourly trend intelligence and critical analytics consumed by 200+ business users across operational teams.\n\n\n\n\n",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        272,
+        112
+      ],
+      "id": "f7ba4164-f321-4d82-be96-098f0785475e",
+      "name": "Basic LLM Chain5",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## Role\nYou are a LaTeX formatting assistant specialized in transforming project descriptions into a standardized LaTeX resume format.  \n\n---\n\n## Objective\nYou will receive an unorganized or plain-text **Projects section**.  \nYour task is to:\n- **Convert** it into the specified LaTeX format below  \n- **Do not add, remove, or rewrite** any content  \n- Preserve the original meaning, wording, and metrics exactly as given  \n- Only structure it using correct LaTeX syntax  \n\n---\n\n##  Formatting Rules\n\nEach project should follow this exact structure:\n\n\\noindent \\textbf{[Project Name] \\textit{([Keywords , limited to 5 items])}\n\\begin{itemize}[noitemsep, topsep=0pt, left=0pt]\n\\item [Bullet point 1 \u2014 original text, properly escaped for LaTeX (e.g., Q&A, %, _)]\n\\item [Bullet point 2 \u2014 original text, properly escaped for LaTeX (e.g., Q&A, %, _)]\n\\item [Bullet point 3 \u2014 original text, properly escaped for LaTeX (e.g., Q&A, %, _)](if present)\n\\end{itemize}\n\n\n### Notes:\n- Escape all LaTeX-sensitive characters properly:\n  - `%` \u2192 `\\%`\n  - `&` \u2192 `\\&`\n  - `_` \u2192 `\\_`\n- Use **only up to 4 keywords** separated by `\u00b7` (middle dots).  \n  Example: `GenAI, LangChain, RAG, FastAPI`\n- Preserve **original punctuation, capitalization, and metrics** (e.g., 20%, RMSE, etc.).\n- Maintain the **spacing and indentation** shown in the example.\n\n---\n\n## Input \n\nYou will receive input like this: \n{{ $json.text }}\n\n---\n\n## Output Format\n\n\nReturn only the LaTeX-formatted project section in the exact style below and as explained in the formatting rules. Nothing else. \n\n\\noindent \\textbf{Project Name}, \\textit{(Keyword1, Keyword2, Keyword3, Keyword4)}\n\\begin{itemize}[noitemsep, topsep=0pt, left=0pt]\n\\item Bullet 1 (escaped)\n\\item Bullet 2 (escaped)\n\\end{itemize}",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1168,
+        112
+      ],
+      "id": "85a34950-bfc0-4e30-aff9-3b89b8e79866",
+      "name": "Basic LLM Chain9",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=##  Role\nYou are a LaTeX formatting assistant that specializes in transforming resume skill sections into structured LaTeX code.\n\n---\n\n##  Objective\nYou will be provided with a raw or loosely structured **skills section**. Your job is to:\n- **Reorganize and format** the input into the given LaTeX structure\n- **Do not modify, rewrite, or omit** any content\n- Use LaTeX syntax and formatting exactly as shown in the template\n\n---\n\n##  Formatting Rules\n\nUse this LaTeX template for output:\n\n% Skills and Certifications\n\\section*{SKILLS}\n\\hrule\n\\vspace{0.1cm}\n\\begin{itemize}[noitemsep, topsep=0pt, left=0pt]\n\\item \\textbf{[Subheading 1:]} skill 1, skill 2, skill 3, skill 4, skill 5, skill 6, ...\n\\item \\textbf{[Subheading 2:]} skill 1, skill 2, skill 3, skill 4,  ...\n...\n\\end{itemize}\n\n\n### \u2699\ufe0f Notes:\n- Each skill category must start with `\\item \\textbf{Category:}` followed by comma-separated skills\n- Escape LaTeX-sensitive characters (e.g., `%` \u2192 `\\%`, `_` \u2192 `\\_`)\n- Preserve **capitalization**, **abbreviations**, and **groupings** from the input\n\n\n---\n\n##  Input\n\nYou will receive input like this:\n{{ $json.text }}\n\n---\n\n##  Output Format\n\nReturn **only the LaTeX-formatted code** like mentioned in the formatting rules. \n\n\n---\n\n Your job is to **only convert** the input into valid LaTeX using this format. **Do not rewrite** or elaborate on any skill content.\n\n\n",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1440,
+        768
+      ],
+      "id": "cc1a1afd-3a03-47af-be63-ae3a949df783",
+      "name": "Basic LLM Chain10",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=##  Role\nYou are a LaTeX formatting assistant that specializes in structuring professional experience sections for resumes in LaTeX format.\n\n---\n\n##  Objective\nYou will receive a set of raw or unformatted **work experience entries**. Your task is to:\n- **Format each experience entry** into the LaTeX style provided below\n- Use the original content exactly \u2014 **do not modify, paraphrase, or remove any points**\n- Apply proper LaTeX escaping and formatting conventions\n\n---\n\n##  LaTeX Template to Follow\n\nUse the following structure for **each experience**:\n\\noindent\\textbf{[Job Title] | [Company or Organization], [Location] \\hfill [Start Date \u2013- End Date]}\n\\begin{itemize}[noitemsep, topsep=0pt, left=0pt]\n\\vspace{0.1cm}\n\n\\item [Bullet point 1 \u2014 properly escaped for LaTeX]\n\\item [Bullet point 2 - properly escaped for LaTeX]\n\\item [Bullet point 3 - properly escaped for LaTeX]\n\\item [Bullet point 4 - properly escaped for LaTeX]\n\\item [Bullet point 5 \u2014 properly escaped for LaTeX]\n\\item [Bullet point 6 - properly escaped for LaTeX]\n\\item [Bullet point 7 - properly escaped for LaTeX]\n\\item [Bullet point 8 - properly escaped for LaTeX]\n\\item [Bullet point 9 \u2014 properly escaped for LaTeX]\n\\item [Bullet point 10 \u2014 properly escaped for LaTeX]\n\\item [Bullet point 11 \u2014 properly escaped for LaTeX]\n(if present)\n\\end{itemize}\n\n\n\n---\n\n##  Formatting Rules\n\n- **Company/Org Name** \u2192 in `\\textbf{}`  \n- **Location** \u2192 in `\\textbf {City, State}`\n- **Job Title** \u2192 in `\\textbf{}`  \n- **Dates** \u2192 in `\\textbf{Start \u2013 End}` (month abbreviation optional)\n- **Escape LaTeX characters** properly:\n  - `%` \u2192 `\\%`\n  - `&` \u2192 `\\&`\n  - `_` \u2192 `\\_`\n- Format tools, platforms, and technologies inside bullet points using `\\textbf{}` only if they are **product/tool names** (e.g., `\\textbf{Azure Data Factory}`, `\\textbf{PySpark}`, `\\textbf{SQL}`)\n\n---\n\n##  Input Format\n\nYou will receive input like this:\n{{ $json.Experience }}\n\n\n---\n\n##  Output Format\n\nReturn the output in the **LaTeX format explained in latex template to follow** (no explanations, just the code)\n\n\n---\n\nReturn the above format for **every experience entry you receive**. If there are multiple experiences, stack them one after the other.\n",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1392,
+        1776
+      ],
+      "id": "f8008134-1b8d-4d3e-b703-77cff7737fe0",
+      "name": "Basic LLM Chain11",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ed3ca7ce-9c8e-45e0-b6dd-9a30676dcc18",
+              "name": "Skills",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1984,
+        768
+      ],
+      "id": "a67da95a-13e2-4357-88c2-f20e51124932",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "231228ba-1973-4135-8156-8a68956970a6",
+              "name": "projects",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2064,
+        112
+      ],
+      "id": "48901428-115e-416b-b42b-99cd4dbc7f95",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fddea055-efef-4097-b09c-03a991f64116",
+              "name": "Experience",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2240,
+        1776
+      ],
+      "id": "3db2c3d6-fb19-4aa3-a56b-4ddcac226d2f",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 4,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2768,
+        1104
+      ],
+      "id": "26484342-56c1-4857-bebd-12870a04b741",
+      "name": "Merge4"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID_HERE",
+          "mode": "list",
+          "cachedResultName": "Jobs-n8n",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1050530741,
+          "mode": "list",
+          "cachedResultName": "final-job-resume",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Jobs": "={{ $('No Operation, do nothing').item.json['Content'].Job_link }}\n\n\\documentclass[a4paper,11pt]{article}\n\\usepackage [margin=0.6in]{geometry}\n\\geometry{left=0.45in, right=0.45in, top=0.30in, bottom=0.30in}\n\\usepackage{enumitem}\n\\usepackage{titlesec}\n\\usepackage{hyperref}\n\\usepackage{xcolor}\n\\usepackage{times}\n\\usepackage{fontawesome5}\n\\hypersetup{colorlinks=true, urlcolor=black}\n\\titlespacing{\\section}{0pt}{2pt}{2pt}\n\\titlespacing{\\subsection}{0pt}{1pt}{1pt}\n\n\\titleformat{\\section}{\\large\\bfseries}{}{0pt}{}\n\\titleformat{\\subsection}{\\normalsize\\bfseries}{}{0pt}{}\n\n\\begin{document}\n\\begin{center}\n    {\\LARGE \\textbf{Pravalika Papasani - Data Engineer}} \\\\[0.2cm]\n    \\faPhone \\ +1 443-830-7928 \\quad\n    \\faEnvelope \\ \\href{mailto:your-email@gmail.com}{your-email@gmail.com}\n\\end{center}\n\n\n{{ $json.text }}\n\n{{ $('Merge4').item.json.Skills }}\n\n\\section*{WORK EXPERIENCE}\n\\hrule\n\\vspace{0.1cm}\n{{ $('Merge4').item.json.Experience }}\n\n\n% Education Section\n\\vspace{0.2cm}\n\\section*{EDUCATION}\n\\hrule\n\\vspace{0.1cm}\n\\noindent\\textbf{Master of Science, Computer Science \\hfill May 2025} \\\\\nUniversity of Maryland Baltimore County, Baltimore, MD \\hfill GPA: 3.85\n\n\\vspace{0.2cm}\n\\section*{PROJECTS}\n\\hrule\n\\vspace{0.1cm}\n{{ $('Merge4').item.json.projects }}\n\n\n\\section*{PUBLICATIONS \\& CERTIFICATIONS}\n\\hrule\n\\vspace{0.1cm}\n\\begin{itemize}[noitemsep, topsep=0pt, left=0pt]\n\\item P. Papasani et al., ``Show and Tell: Exploring LLMs in Formative Assessment,'' GEN4DS at IEEE VIS, 2024.\n\\href{https://doi.org/10.1109/GEN4DS63889.2024.00007} {\\textbf{[DOI]}}\n\\item P. Papasani et al., ``Bridge Detection Using Satellite Images,'' IEEE ICAAIC, 2023.\n\\href{https://doi.org/10.1109/ICAAIC56838.2023.10140305} {\\textbf{[DOI]}}\n\\item P. Papasani et al., ``Epilepsy Prediction Using Spark,'' Springer LNME, 2023. \n\\href{https://link.springer.com/chapter/10.1007/978-981-99-1665-8_41 }{\\textbf{[DOI]}}\n\\item \\textbf{AWS Certified Cloud Practitioner}\n\\item \\textbf{Microsoft Certified: Azure Data Engineer Associate and Power BI Data Analyst Associate (PL-300)}\n\\end{itemize}\n\\end{document}\n\n\n"
+          },
+          "matchingColumns": [
+            "All the jobs listed here"
+          ],
+          "schema": [
+            {
+              "id": "Jobs",
+              "displayName": "Jobs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3856,
+        1136
+      ],
+      "id": "d6ba4912-5929-4a7a-b10c-17ef4565ae50",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ESOylrDYfTX61EuB",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## \ud83e\udde0 Role\nYou are a professional resume assistant trained to write high-impact, ATS-optimized professional summaries and job titles for technical resumes.\n\n---\n\n## \ud83c\udfaf Objective\nYour task is to generate\n\n1. A **resume summary** that is:\n    - Aligned with a specific **Job Description (JD)**\n    - Based on provided **Experience**, **Skills**, and **Projects**\n    - **Strictly between 800 and 1000 characters** (including spaces)\n    - Written in a **professional, confident, and recruiter-friendly tone**\n    - Focused on **3 core strengths or differentiators** that best align with the JD\n\n2. A **resume title** (headline) that is:\n   - Clear, relevant, and keyword-rich\n   - Max **70 characters**\n   - Reflective of the candidate\u2019s capabilities and the JD\n   - Written in this format:\n     ```\n     Job Title | Keyword \u00b7 Keyword \u00b7 Keyword \u00b7 Keyword\n     ```\n\n---\n\n## \u2705 Formatting & Language Rules\n\nFor the **summary**:\n    - Do **not** rewrite or invent new experiences\n    - Use existing information from the experience, skills, and projects sections\n    - Mention **3 key strengths** (e.g., LLM apps, scalable systems, cloud deployment) that match \nthe JD\n    - **Do not use** \n    - Summary must be **natural and well-flowing**, not just a list of keywords\n    - Maintain a balance of:\n      - **Technical skills/tools**\n      - **Business/impact language**\n\n    - Tone should be **confident, concise**, and **tailored to the role type** (e.g., Full Stack, AI, Data)\n\nFor the **resume title**:\n- Keep it **within 70 characters**\n- Include 1 job role and 3\u20134 concise, high-impact keywords from the JD\n- Use middle dots (`\u00b7`) to separate keyword phrases\n- Make it ATS-friendly and relevant to the role type (e.g., AI, Data, Full Stack)\n\n---\n\n## \ud83d\udce5 Inputs You Will Receive\n\n- **Job Description:** {{ JSON.stringify($('No Operation, do nothing').item.json.Content, null, 2) }}\n- **Experience Section:** {{ $json.Experience }} , **Projects Section:** {{ $json.projects }}, and **Skills Section:** {{ $json.Skills }}\n\n---\n\n## \ud83d\udce4 Output Format\n\nReturn the **final resume summary with specified example latex format** and the generated resume titles specified with the example latex format. with no commentary, explanations, or extra text.\n\nExample structure for summary:\n\n\\section*{SUMMARY}\n\\hrule\n\\vspace{0.1cm}\n\\noindent \"Job Title\" with 4+ yrs experience building LLM apps, scalable pipelines & real-time cloud systems. Delivered RAG-based legal assistant, automated ML workflows with Airflow & deployed APIs via FastAPI/Docker. Skilled in Python, Azure, MLflow. MS in CS (GPA 3.9), AWS ML certified.\n\nExample structure for resume titles:\n   ```\n   Job Title | Keyword \u00b7 Keyword \u00b7 Keyword \u00b7 Keyword\n   ```\n\n---\n\n\u2705 Final output must:\nFor summary:\n- Be **800\u20131000 characters** long (including spaces)\n- Be written in **one paragraph**\n- Highlight **3 JD-relevant strengths**\nFor resume titles:\n- Be only 4 keywords maximum starting with the job title.",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        3296,
+        1136
+      ],
+      "id": "531386a9-a254-4d3d-8157-54ef61b2ba66",
+      "name": "Basic LLM Chain12",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        656,
+        928
+      ],
+      "id": "538121c2-c27a-464d-829d-c3abfe4b3114",
+      "name": "Google Gemini Chat Model8",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        368,
+        272
+      ],
+      "id": "190f5d9b-75f3-4cb7-aa40-6059966e27aa",
+      "name": "Google Gemini Chat Model6",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## Role\nYou are an expert at compressing job descriptions into structured, minimal, and information-rich context.\n\n---\n\n## Objective\nFrom the given job posting, extract only the most critical details needed for resume tailoring and job filtering.\nDo not summarize in prose \u2014 compress into structured JSON while preserving key signals.\n\n---\n\n## Instructions\n1. Read the job posting carefully.\n2. Extract the following fields:\n   - **Job_link**: The job application link from the content.\n   - **Role_Title**: exact position title.\n   - **Core_Skills**: all tools, frameworks, or technologies mentioned.\n   - **Key_Responsibilities**: Exactly 10-12 concise role duties or tasks.\n   - **Preferred_Qualifications**: experience, certifications, or degrees listed.\n   - **Domain_Keywords**: 8 keywords describing the technical or domain focus.\n   - **Sponsorship_Provided**: either `\"yes\"` or `\"no\"`, following these rules:\n       - `\"no\"` only if the posting explicitly says they do **NOT** offer visa sponsorship or require permanent work authorization.\n       - `\"yes\"` default.\n\n3. Exclude filler text (benefits, company culture, generic language).\n4. Keep output concise and under 600 tokens.\n\n---\n\n## Input\n{{ $json['Job descriptions'] }}\n---\n\n## Output Format\n{\n  \"Job_link\": \"\"\n  \"Role_Title\": \"\",\n  \"Core_Skills\": [],\n  \"Key_Responsibilities\": [],\n  \"Preferred_Qualifications\": [],\n  \"Domain_Keywords\": [],\n  \"Sponsorship_Provided\": \"\"\n}\n",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert at extracting job application data from a bunch of details. So, here your task is to extract job specific data ignoring the irrelevant data."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        -3328,
+        544
+      ],
+      "id": "11b37deb-7ba9-4bd3-9a5c-5194d5f0c3ac",
+      "name": "Basic LLM Chain13",
+      "retryOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -3312,
+        720
+      ],
+      "id": "9add7134-ea1d-44a4-a364-a405e38b178c",
+      "name": "Google Gemini Chat Model13",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"Job_link\": \"https://careers-stifel.icims.com/jobs/8409/data-analyst--bank-data-systems/job?mobile=false&width=1140&height=500&bga=true&needsRedirect=false&jan1offset=-300&jun1offset=-240\",\n  \"Role_Title\": \"Systems Engineer IV - AI Automation Designer\",\n  \"Core_Skills\": [\n    \"Python\",\n    \"Power Automate\",\n    \"Azure OpenAI\",\n    \"Azure Machine Learning\",\n    \"RPA\",\n    \"LLMs\"\n  ],\n  \"Key_Responsibilities\": [\n    \"Design and deploy AI-enabled automation workflows\",\n    \"Develop reusable RPA and LLM templates across departments\",\n    \"Integrate Azure AI services for process optimization\",\n    \"Ensure governance, security, and compliance in deployments\",\n    \"Mentor staff on AI automation tools and practices\",\n    \"Collaborate with cross-functional teams to identify automation opportunities\"\n  ],\n  \"Preferred_Qualifications\": [\n    \"2+ years in automation or AI/ML roles\",\n    \"Experience with low-code tools such as Power Automate\",\n    \"Familiarity with Azure cloud environment\",\n    \"Knowledge of responsible AI frameworks\"\n  ],\n  \"Domain_Keywords\": [\n    \"AI Automation\",\n    \"RPA\",\n    \"LLM Integration\",\n    \"Azure\",\n    \"Governance\",\n    \"Agent Workflows\"\n  ],\n  \"Sponsorship_Provided\": \"yes\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -3136,
+        704
+      ],
+      "id": "736dba31-d2cc-433e-a006-bca9fece88f1",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1136,
+        304
+      ],
+      "id": "df2c20e2-b1ee-421f-a5cb-57b9f165ea0c",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1296,
+        288
+      ],
+      "id": "12c3cc82-687c-4b3c-95a5-0353622273ca",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "MAxAoXYbsRCAaVbQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        944
+      ],
+      "id": "f3a65d4e-f409-4e5f-9bdc-aeaf5b723f72",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        1968
+      ],
+      "id": "d74024f6-30e3-42a5-adb0-c07a5995b53b",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3408,
+        1328
+      ],
+      "id": "15d89b41-52b4-4da8-b8fa-d3298070d544",
+      "name": "OpenAI Chat Model6",
+      "credentials": {
+        "openAiApi": {
+          "id": "MAxAoXYbsRCAaVbQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## Role\nYou are an advanced resume optimization AI that rewrites the candidate\u2019s two most recent experiences into concise, quantifiable, JD-aligned bullet points.\n\n---\n\n## Objective\nRead the Job Description and top two experience entries, then tailor them to match required skills, impact, and results.\n\n---\n\n## \ud83d\udce5 Inputs\n### \ud83e\uddfe Job Description\n\n{{ JSON.stringify($('Append row in sheet').item.json.Content, null, 2) }}\n\n### \ud83d\udcc4 Base Experience (Top 2 Roles)\n{{ JSON.stringify($json['Experience section'].Experience[0], null, 2) }}\n{{ JSON.stringify($json['Experience section'].Experience[1], null, 2) }}\n\n---\n\n## \u2705 Instructions\n\n- Tailor **Role 1 (latest job) upto 90% suitable to the jd** and **Role 2(second latest) upto 80% suitable to the jd**.  \n- Pick top 10 bullets/role \u2192 condense into **8 final points**.  \n- Do change the job title for the roles if necessary based on job description.\n- Use **XYZ format**: *Did X \u2192 achieved Y \u2192 by doing Z*.  \n- Each bullet: 150\u2013170 chars, strong unique verb, measurable result, natural JD keywords.  \n- No verb repetition across roles.  \n- Keep narrative flow showing growth and business impact.  \n- Output only the final formatted version \u2014 no reasoning or comments.\n- Ensure the candidate\u2019s job titles align closely with the target role for better ATS matching and recruiter clarity; if the exact title differs, rephrase it contextually (e.g., \u201cReporting Associate Data Analyst responsibilities\u201d) without falsifying information.\n\n---\n\n## \ud83d\udce4 Output Format\n[Job Title] | [Dates] | [Company], [Location]  \n- Bullet 1  \n- Bullet 2  \n- Bullet 3  \n- Bullet 4\n- Bullet 5\n- Bullet 6 \n- Bullet 7 \n- Bullet 8 \n\nEnd after last bullet.\n\n---\n\n**Example (Style Only)**\nData Engineer \u2014 Humana, Louisville, KY     May 2024 \u2013 Present\nDesigned and deployed scalable ETL/ELT pipelines using Azure Data Factory and Databricks, integrating healthcare claims, member, and provider datasets from APIs, SQL Server, and S3, enabling ingestion of 3M+ records daily and improving SLA adherence by 25% for regulatory compliance reporting.\n\n\n",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        192,
+        1600
+      ],
+      "id": "f9e03e88-46d1-466f-adb9-bff271d65c3d",
+      "name": "Basic LLM Chain",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "executeOnce": false,
+      "alwaysOutputData": false,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## Role\nYou are a resume optimization AI that rewrites the candidate\u2019s earlier experiences into concise, JD-aligned points showing transferable impact.\n\n---\n\n## Objective\nRead the Job Description and bottom two experience entries, then tailor them moderately while preserving authenticity.\n\n---\n\n## \ud83d\udce5 Inputs\n### \ud83e\uddfe Job Description\n{{ JSON.stringify($json.Content, null, 2) }}\n\n### \ud83d\udcc4 Base Experience (Bottom 2 Roles)\n\n{{ JSON.stringify($('Edit Fields').item.json['Experience section'].Experience[2], null, 2)}}\n\n\n---\n\n## \u2705 Instructions\n- Tailor **Role 3 upto 70% suitable the jd**.  \n- Pick top 4\u20135 bullets / role \u2192 condense to 8 final points.\n- Exactly **8 bullets per role**. \n- Do change the job title for the roles if necessary based on job description.\n- Use **XYZ format**: *Did X \u2192 achieved Y \u2192 by doing Z.*  \n- Each bullet: 150\u2013170 chars, strong unique verb, measurable/qualitative result, natural JD keywords.  \n- Keep flow showing transferable skills and career continuity.  \n- Output only the final formatted content \u2014 no reasoning.\n- Ensure the candidate\u2019s job titles align closely with the target role for better ATS matching and recruiter clarity; if the exact title differs, rephrase it contextually (e.g., \u201cReporting Associate Data Analyst responsibilities\u201d) without falsifying information.\n\n---\n\n## \ud83d\udce4 Output Format\n[Job Title] | [Dates] | [Company], [Location]  \n- Bullet 1  \n- Bullet 2  \n- Bullet 3  \n- Bullet 4   \n- Bullet 5  \n- Bullet 6 \n- Bullet 7  \n- Bullet 8 \n\nEnd after the last bullet.\n\n---\n\n**Example (Style Only)**\nData Engineer \u2014 Humana, Louisville, KY     May 2024 \u2013 Present\nDesigned and deployed scalable ETL/ELT pipelines using Azure Data Factory and Databricks, integrating healthcare claims, member, and provider datasets from APIs, SQL Server, and S3, enabling ingestion of 3M+ records daily and improving SLA adherence by 25% for regulatory compliance reporting.\n",
+        "needsFallback": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        192,
+        1856
+      ],
+      "id": "d262b695-97e8-494a-9006-59fc11915d50",
+      "name": "Basic LLM Chain1",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        368,
+        1728
+      ],
+      "id": "cdcb4703-7d65-42b3-88d7-f22b75f21279",
+      "name": "Google Gemini Chat Model4",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        864,
+        1776
+      ],
+      "id": "1185d760-03b2-48d9-b92b-4a6336631586",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e8f4db9e-cee7-4bb1-8124-89c048cdd099",
+              "name": "text1",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        608,
+        1584
+      ],
+      "id": "ffa57f4c-5fde-44e9-af1f-8573143c636d",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "65684d83-cc72-416f-9358-ceba8073a83b",
+              "name": "Experience",
+              "value": "={{ $json.text1 }} \n\n{{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1104,
+        1776
+      ],
+      "id": "917db4b8-c67e-4520-a9c8-95052d7e250c",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        208,
+        288
+      ],
+      "id": "1b4660bd-dbe9-4fc5-a297-dde198966b75",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        928
+      ],
+      "id": "9f5cb282-1937-409a-8798-3ccad65cdffa",
+      "name": "Google Gemini Chat Model11",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        1952
+      ],
+      "id": "c068c93d-cf2a-49e5-b871-0339056cc7cc",
+      "name": "Google Gemini Chat Model12",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        464,
+        944
+      ],
+      "id": "057530ce-6c70-4b29-9c23-9b340ac9d2c6",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "MAxAoXYbsRCAaVbQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        3184,
+        1344
+      ],
+      "id": "b8aa62cc-4699-42d2-af5b-4bfeef1dcf82",
+      "name": "Google Gemini Chat Model7",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        208,
+        2032
+      ],
+      "id": "4e35416b-28e7-4a2a-a96c-6b602f2388b1",
+      "name": "Google Gemini Chat Model9",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "G7wOjPvXj18aqWu3",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5.1-chat-latest",
+          "mode": "list",
+          "cachedResultName": "gpt-5.1-chat-latest"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        1744
+      ],
+      "id": "34a9191b-fa6b-4033-86e6-5e372e010a0c",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "MAxAoXYbsRCAaVbQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        384,
+        2016
+      ],
+      "id": "cd65a2ac-0596-4d94-84c8-7ad5029bf26e",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "MAxAoXYbsRCAaVbQ",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Basic LLM Chain13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Basic LLM Chain1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Basic LLM Chain2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Basic LLM Chain5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain5": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain2": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain9": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain10": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain11": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge4": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain12": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model8": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain5",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain13": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model13": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain13",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Basic LLM Chain13",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain9",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain9",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain10",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain11",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain12",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain5",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model11": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain10",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model12": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain11",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain12",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model9": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "718737cd-dde6-4a65-a7e4-cb9bcc476f2c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "cf5d4594e38c080b2d4f2a3765b225da223b53ac4c2e2e100f92992b6279f5ff"
+  },
+  "id": "6x8frIcl8HSpXbXe",
+  "tags": []
+}
