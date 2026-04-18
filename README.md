@@ -173,9 +173,11 @@ The workflow is designed to be adapted:
 ## 📁 Repository Structure
 
 ```
-├── README.md                        # This file
-├── Resume-workflow-sanitized.json   # The n8n workflow (safe to share)
-└── .gitignore                       # Protects secrets from being committed
+├── README.md # Project documentation
+├── Resume-workflow-sanitized.json # n8n workflow (safe to share)
+├── .gitignore # Prevents committing sensitive files
+├── SECURITY.md # Security policy and reporting guidelines
+└── requirements.txt # Python dependencies
 ```
 
 ---
