@@ -1,0 +1,37 @@
+# ==============================================================
+# n8n Smart Resume Tailor — Python Requirements
+# ==============================================================
+# This project runs primarily inside n8n (no Python runtime needed
+# for the workflow itself). These packages are for optional local
+# tooling: workflow validation, JSON sanitization, and dev scripts.
+#
+# Install:  pip install -r requirements.txt
+# ==============================================================
+
+# --- JSON / Data Handling ---
+jsonschema==4.23.0        # Validate n8n workflow JSON structure
+python-dotenv==1.0.1      # Load .env files for local dev/testing
+
+# --- HTTP / API Testing (optional: test API keys before importing) ---
+requests==2.32.3          # Make test calls to Gemini, OpenAI, Firecrawl APIs
+httpx==0.27.2             # Async HTTP client (alternative to requests)
+
+# --- Google Sheets (optional: pre-populate or validate sheet structure) ---
+google-auth==2.34.0               # Google OAuth2 authentication
+google-auth-oauthlib==1.2.1       # OAuth2 flow for Google APIs
+google-api-python-client==2.143.0 # Google Sheets API client
+
+# --- OpenAI (optional: test prompts locally before wiring into n8n) ---
+openai==1.51.2            # OpenAI Python SDK (GPT-4.1, GPT-5-mini)
+
+# --- Google Gemini (optional: test Gemini prompts locally) ---
+google-generativeai==0.8.3   # Google Gemini API SDK
+
+# --- Security / Secret Scanning ---
+detect-secrets==1.5.0     # Scan files for accidentally committed secrets
+bandit==1.7.10            # Python security linter (for any helper scripts)
+
+# --- Dev / Linting ---
+black==24.10.0            # Code formatter
+flake8==7.1.1             # Linter
+pre-commit==3.8.0         # Git hooks (runs detect-secrets before every commit)
