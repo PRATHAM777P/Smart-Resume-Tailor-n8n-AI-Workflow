@@ -1,0 +1,77 @@
+# ============================================================
+# n8n Smart Resume Tailor — .gitignore
+# ============================================================
+# This file ensures no secrets, credentials, or personal data
+# are accidentally committed to GitHub.
+# ============================================================
+
+# --- Environment & Secrets ---
+.env
+.env.*
+.env.local
+.env.production
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.json
+credentials.json
+
+# --- n8n Local Config (contains stored credentials) ---
+.n8n/
+n8n-data/
+~/.n8n/
+
+# --- n8n Exported Credentials (NEVER commit these) ---
+*credentials*.json
+*-credentials.json
+n8n-credentials-*.json
+
+# --- API Keys & Tokens ---
+api_keys.txt
+api_keys.json
+tokens.json
+*.token
+
+# --- Google OAuth & Service Accounts ---
+service-account*.json
+google-credentials*.json
+client_secret*.json
+token.json
+
+# --- OS Junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# --- Node / npm (if you have any n8n custom nodes) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Python (if used for any tooling) ---
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# --- Editor ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Temporary / Build ---
+*.tmp
+*.temp
+dist/
+build/
